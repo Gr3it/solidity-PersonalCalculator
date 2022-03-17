@@ -1,3 +1,13 @@
+# Setup
+
+run
+
+```shell
+npm i
+```
+
+Add the personal token and wallet private key in .env file (follow the .env.example template)
+
 # Advanced Sample Hardhat Project
 
 This project demonstrates an advanced Hardhat use case, integrating other tools commonly used alongside Hardhat in the ecosystem.
