@@ -13,7 +13,7 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
   }
 });
 
-const { PRIVATE_KEY2, WEB3_INFURA_PROJECT_ID, ETHERSCAN_TOKEN } = process.env;
+const { PRIVATE_KEY, WEB3_INFURA_PROJECT_ID, ETHERSCAN_TOKEN } = process.env;
 
 module.exports = {
   solidity: "0.8.11",
@@ -26,11 +26,11 @@ module.exports = {
   networks: {
     rinkeby: {
       url: `https://rinkeby.infura.io/v3/${WEB3_INFURA_PROJECT_ID}`,
-      accounts: [`${PRIVATE_KEY2}`],
+      accounts: [`${PRIVATE_KEY}`],
     },
     ropsten: {
       url: `https://ropsten.infura.sio/v3/${WEB3_INFURA_PROJECT_ID}`,
-      accounts: [`${PRIVATE_KEY2}`],
+      accounts: [`${PRIVATE_KEY}`],
     },
   },
   gasReporter: {
