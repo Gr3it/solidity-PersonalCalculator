@@ -15,6 +15,7 @@ function Home() {
   const [provider, setProvider] = useState(null);
   const [contract, setContract] = useState(null);
   const [error, setError] = useState(false);
+  const [incorrectChain, setIncorrectChain] = useState(false);
 
   useEffect(() => {
     getValue();
@@ -34,6 +35,11 @@ function Home() {
     }
 
     const provider = new ethers.providers.Web3Provider(window.ethereum);
+    if ((await provider.getNetwork()).chainId != 4) {
+      setIncorrectChain(true);
+      setTimeout(() => setIncorrectChain(false), 4000);
+      return;
+    }
     const accounts = await window.ethereum.request({
       method: "eth_requestAccounts",
     });
@@ -162,6 +168,17 @@ function Home() {
           title="Transaction Error"
           disallowClose
         ></Notification>
+      )}
+      {incorrectChain && (
+        <Notification
+          className="AbsoluteBottom"
+          icon={<X size={18} />}
+          color="red"
+          title="Incorrect Chain"
+          disallowClose
+        >
+          Please switch chain in metamask to Rinkeby Testnet
+        </Notification>
       )}
     </div>
   );
