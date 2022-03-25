@@ -1,3 +1,7 @@
+# Live Demo
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fc7087ee-d948-4418-b13f-608d33e4ffe6/deploy-status)](https://app.netlify.com/sites/blockchain-personal-calculator/deploys)
+
 # Setup
 
 run
